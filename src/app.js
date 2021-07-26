@@ -78,7 +78,7 @@ app.get('/', function (req, res, next) {
 });
 
 app.post('/', (req, res) => {
-    if (Object.keys(req.body).length === 12) {
+    if (Object.keys(req.body).length < 13) {
         knex('tests').insert(req.body)
             .then(response => {
                 console.log(response)
